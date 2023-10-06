@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - run: echo "{ \"version\": \"2023-10-06a\" }" >> ./assets/version.json
+      - run: echo "teste lucas" >> ./assets/version.json
 
       - uses: EndBug/add-and-commit@v9
         with:
