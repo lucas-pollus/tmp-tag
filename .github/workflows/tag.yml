@@ -12,7 +12,8 @@ jobs:
         with:
           fetch-depth: 0
           
-      - run: echo '{ "version": "2023-10-06a" }' > ./assets/version.json
+      - run: |
+          echo '{ "version": "2023-10-06a" }' > ./assets/version.json
 
       - uses: EndBug/add-and-commit@v9
         with:
