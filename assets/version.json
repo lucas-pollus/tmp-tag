@@ -1,1 +1,1 @@
-{ "version": "$PROXIMA_VERSAO" }
+{ "version": "${PROXIMA_VERSAO}" }
