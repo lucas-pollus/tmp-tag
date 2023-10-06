@@ -1,6 +1,10 @@
 name: Cria nova tag
 on:
   workflow_dispatch:
+    inputs:
+      PROXIMO_VERSAO:
+        description: 'Qual a próxima versão?'
+        required: true
 
 jobs:
   update-version:
@@ -13,11 +17,11 @@ jobs:
           fetch-depth: 0
           
       - run: |
-          echo '{ "version": "v2023-10-06a" }' > ./assets/version.json
+          echo '{ "version": "${{ github.event.inputs.STACK_NAME }}" }' > ./assets/version.json
 
       - uses: EndBug/add-and-commit@v9
         with:
-          message: 'Adiciona novo commit de teste'
+          message: 'Adiciona novo commit de teste ${{ github.event.inputs.STACK_NAME }}'
           add: '*.json --force'
-          tag: 'v2023-10-06a --force'
+          tag: '${{ github.event.inputs.STACK_NAME }} --force'
           
