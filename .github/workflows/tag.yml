@@ -1,0 +1,17 @@
+name: Cria nova tag
+on:
+  workflow_dispatch:
+
+jobs:
+  update-version:
+    name: Update Versão
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo "{ \"version\": \"2023-10-06a\" }" >> ./assets/version.json
+
+      - uses: EndBug/add-and-commit@v9
+        with:
+          message: 'Adiciona novo commit de teste'
+          add: '*.json --force'
+          
