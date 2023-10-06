@@ -23,7 +23,7 @@ jobs:
 
       - uses: EndBug/add-and-commit@v9
         with:
-          message: 'Adiciona novo commit de teste "${PROXIMA_VERSAO}"'
+          message: 'Adiciona novo commit de teste ${PROXIMA_VERSAO}'
           add: '*.json --force'
           tag: '"$PROXIMA_VERSAO" --force'
           
