@@ -2,7 +2,7 @@ name: Cria nova tag
 on:
   workflow_dispatch:
     inputs:
-      PROXIMO_VERSAO:
+      PROXIMA_VERSAO:
         description: 'Qual a próxima versão?'
         required: true
 
@@ -17,11 +17,11 @@ jobs:
           fetch-depth: 0
           
       - run: |
-          echo '{ "version": "${{ github.event.inputs.STACK_NAME }}" }' > ./assets/version.json
+          echo '{ "version": "${{ github.event.inputs.PROXIMA_VERSAO }}" }' > ./assets/version.json
 
       - uses: EndBug/add-and-commit@v9
         with:
-          message: 'Adiciona novo commit de teste ${{ github.event.inputs.STACK_NAME }}'
+          message: 'Adiciona novo commit de teste ${{ github.event.inputs.PROXIMA_VERSAO }}'
           add: '*.json --force'
-          tag: '${{ github.event.inputs.STACK_NAME }} --force'
+          tag: '${{ github.event.inputs.PROXIMA_VERSAO }} --force'
           
