@@ -29,6 +29,7 @@ jobs:
     
   get-version:
     name: Obter versão
+    needs: update-version
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
