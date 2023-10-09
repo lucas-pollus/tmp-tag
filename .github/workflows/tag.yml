@@ -26,4 +26,14 @@ jobs:
           message: 'Bump versão ${{ env.PROXIMA_VERSAO }}'
           add: '*.json --force'
           tag: '${{ env.PROXIMA_VERSAO }} --force'
-          
+    
+  get-version:
+    name: Obter versão
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - run: |
+          cat ./assets/version.json
